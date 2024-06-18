@@ -29,7 +29,7 @@ class listaContenidos extends ResourceController
 
     public function show($id = null)
     {
-        $contenidos[$id] = $this->model->findAll();
+        $contenidos[$id] = $this->model->find($id);
         return $this->respond($contenidos[$id]);
         //echo '<br>Metodo show' . $id;
     }

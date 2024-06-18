@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Controllers;
+use App\Models\ContenidoModel;
 
 class Home extends BaseController
 {
@@ -13,5 +14,10 @@ class Home extends BaseController
     {
         //return view('welcome_message');
         return view('Plantilla/header').view('Vista').view('Plantilla/footer');
+    }
+
+    public function show($id = null){
+        $list['id']= $id;
+        return view('Plantilla/header').view('VistaCompleta',$list).view('Plantilla/footer');
     }
 }

@@ -37,7 +37,7 @@
                     });
                     cardsHtml += `<a href="${data[cont]['id']}" class="stretched-link">Go somewhere</a>`*/
                     cardsHtml += `
-                                <a href="listaContenidos/${data[cont]['id']}" class="card">
+                                <a href="${data[cont]['id']}" class="card">
                                 <img src="image/${data[cont]['img_p']}" class="img-fluid cover" alt="...">
                                 
                                 `

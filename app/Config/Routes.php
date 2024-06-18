@@ -6,6 +6,7 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 $routes->get('/', 'Home::index');
+$routes->get('/(:num)','Home::show/$1');
 
 
 $routes->group('Contenidos',['namespace' => 'App\Controllers\api'],function($routes){
