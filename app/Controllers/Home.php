@@ -20,4 +20,8 @@ class Home extends BaseController
         $list['id']= $id;
         return view('Plantilla/header').view('VistaCompleta',$list).view('Plantilla/footer');
     }
+
+    public function tabla(){
+        return view('Plantilla/header').view('VistaTabla').view('Plantilla/footer');
+    }
 }

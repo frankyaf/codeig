@@ -7,6 +7,7 @@ use CodeIgniter\Router\RouteCollection;
  */
 $routes->get('/', 'Home::index');
 $routes->get('/(:num)','Home::show/$1');
+$routes->get('/listaContenidos','Home::tabla');
 
 
 $routes->group('Contenidos',['namespace' => 'App\Controllers\api'],function($routes){
