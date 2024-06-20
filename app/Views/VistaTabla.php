@@ -1,9 +1,9 @@
 
     <div class="container">
         <div class="row">
-            <h3>
+            <h1>
                     Administración de Articulos
-            </h3>
+            </h1>
         </div>
     
         <div class="row ">
@@ -13,7 +13,7 @@
             </div>    
         </div>
 
-                <table id="tableArticulos" class="table table-bordered border-dark table-condensed table-hover" style="width:100%">
+                <table id="tableArticulos" class="table table-bordered border-dark table-striped table-condensed table-hover table responsive" style="width:100%">
                       <thead class="text-center">
                             <tr>
                                 <th>ID</th>
@@ -120,7 +120,7 @@
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form id="formArticuloEdit">    
+                    <form id="formArticuloEdit" method="POST">    
                         <div class="modal-body">
                             <div class="form-group">
                             <label for="id_e" class="col-form-label">Id:</label>
@@ -160,7 +160,7 @@
                             <div class="form-group">
                                 <label for="descripcion_e" class="col-form-label">Descripción:</label>
                                 <div class="form-floating">
-                                <textarea class="form-control" placeholder="Leave a comment here" id="descripcion_e" style="height: 100px"></textarea>
+                                <textarea class="form-control" placeholder="Leave a comment here" name="descripcion_e" id="descripcion_e" style="height: 100px"></textarea>
                                 </div>
                             </div>
                             
@@ -183,6 +183,7 @@
           </div>
 
     </div>
+
 <script>
 
     // Función para redirigir a otra página
@@ -265,6 +266,10 @@
                 tipo= fila.find('td:eq(4)').text();
                 nombre_portada = fila.find('td:eq(5)').text();
                 nombre_previa = fila.find('td:eq(6)').text();
+                
+                descripcion = fila.find('td:eq(7)').text();
+                tinymce.get('descripcion_e').setContent(descripcion);
+
                 descripcion = fila.find('td:eq(7)').text();
                 fecha = fila.find('td:eq(8)').text();
 
@@ -358,7 +363,7 @@
             tipo = $.trim($("#tipo_e").val());
             nombre_portada = $.trim($("#nombre_portada_e").val());
             nombre_previa = $.trim($("#nombre_previa_e").val());
-            descripcion = $.trim($("descripcion_e").val());
+            descripcion = tinymce.get('descripcion_e').getContent();
             fecha =$.trim($("#fecha_e").val());
 
             console.log(id);

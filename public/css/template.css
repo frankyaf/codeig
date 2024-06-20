@@ -87,3 +87,27 @@ h1{
 }
 
 
+/* Estilo para los encabezados de la tabla */
+#tableArticulos thead th {
+    background-color: #4CAF50; /* Color de fondo */
+    color: white; /* Color de texto */
+    font-weight: bold; /* Negrita */
+}
+
+/* Estilo para las celdas de la tabla */
+#tableArticulos tbody td {
+    background-color: #f2f2f2; /* Color de fondo */
+    color: #333; /* Color de texto */
+}
+
+/* Ajustar el tamaño de la barra de búsqueda */
+.dataTables_filter input {
+    width: 150px; /* Reducir el ancho */
+    padding: 2px 5px; /* Ajustar el padding para que sea más pequeño */
+    font-size: 14px; /* Ajustar el tamaño de la fuente si es necesario */
+}
+
+/* Si deseas cambiar el color de texto de la información de paginación y búsqueda a blanco */
+.dt-search, .dataTables_info{
+    color: white; /* Color de texto */
+}

@@ -25,12 +25,16 @@
                 titulo=data[0]['titulo'];
 
                 console.log(titulo);
-                var selectedRows = [1, 2];
+
                 // Crear cards
                 var cardsHtml = '';
 
                 cont = 0;
                 $.each(data, function(_, row) {
+                    /*Obtener la descripcion de la data a una variable*/
+                    descripcion = data[cont]['description'];
+                    var contenidoModificado = descripcion.replace(/<p>/g, '<p class="text-hidden">');
+
                     cardsHtml += '<div class="card">';
                     /*$.each(selectedRows, function(_, rowIndex) {
                         cardsHtml += `<p><strong>${Object.keys(row)[rowIndex]}:</strong> ${row[Object.keys(row)[rowIndex]]}</p>`;
@@ -49,11 +53,9 @@
                                     </strong>
                                 </p>
                                 `
-                    
+                    //Añade el contenido modificado a la card
                     cardsHtml +=`
-                                <p class="text-hidden">
-                                        ${data[cont]['description']}
-                                </p>
+                                        ${contenidoModificado}
                                 `
                     //cardsHtml += `<a href="${data[cont]['id']}"></a>`
                     cardsHtml += `</a></div>`;
