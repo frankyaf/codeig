@@ -111,3 +111,100 @@ h1{
 .dt-search, .dataTables_info{
     color: white; /* Color de texto */
 }
+
+
+.dt-info, .dt-length{
+    color: #f2f2f2; /* Color parecido al blanco */
+}
+
+
+/* Estilo para el botón de agregar */
+#btnNuevoArticulo{
+    background-color: #008CBA;     /* Color de fondo azul */
+    color: white; /* Color de texto */
+    padding: 10px 20px; /* Ajustar el padding */
+    text-align: center; /* Alinear el texto al centro */
+    text-decoration: none; /* Sin subrayado */
+    display: inline-block; /* Mostrar como bloque */
+    font-size: 13px; /* Ajustar el tamaño de la fuente */
+    margin: 4px 2px; /* Ajustar el margen */
+    cursor: pointer; /* Cambiar el cursor al pasar el mouse */
+    border-radius: 8px; /* Ajustar el radio de borde */
+    width: 90px; /* Ajustar el ancho */
+    height: 90px; /* Ajustar el alto */
+    /*Ajustar el texto para que quepa dentro del ancho y alto*/    
+    text-overflow: ellipsis;
+
+}
+
+#btnNuevoArticulo svg{
+    width: 30px; /* Ajustar el ancho del icono */
+    height: 30px; /* Ajustar el alto del icono */
+}
+
+#btnNuevoArticulo:hover{
+    background-color: #005f6b; /* Cambiar el color de fondo al pasar el mouse */
+}
+
+
+/*Estilo para el botón de inicio */
+.btnInicio {
+     /* Color de fondo azul turquesa*/
+    background-color: #008CBA;
+    color: white; /* Color de texto */
+    border: none; /* Sin borde */
+    padding: 10px 20px; /* Ajustar el padding */
+    text-align: center; /* Alinear el texto al centro */
+    text-decoration: none; /* Sin subrayado */
+    display: inline-block; /* Mostrar como bloque */
+    font-size: 16px; /* Ajustar el tamaño de la fuente */
+    margin: 4px 2px; /* Ajustar el margen */
+    cursor: pointer; /* Cambiar el cursor al pasar el mouse */
+    border-radius: 8px; /* Ajustar el radio de borde */
+}
+
+.btnInicio:hover{
+    background-color: #005f6b; /* Cambiar el color de fondo al pasar el mouse */
+}
+
+/*Estilo para el titulo de la noticia completa */
+.titulo_noticia{
+    color: azure; /* Color de texto */
+    font-size: 30px; /* Ajustar el tamaño de la fuente */
+    text-align: center; /* Alinear el texto al centro */
+}
+
+/*Estilo para el contenido de la noticia completa */
+.contenido_noticia{
+     /* Color de texto cercano al blanco*/
+    color: #f2f2f2;
+    font-size: 20px; /* Ajustar el tamaño de la fuente */
+    text-align: justify; /* Justificar el texto */
+}
+
+
+/*Imagen de la noticia que cubre el 100% del ancho*/
+.img_noticia{
+    width: 100%; /* Ancho del 100% */
+    height: 50px;
+    object-fit: cover; /* Ajustar la imagen */
+}
+
+/*Estilo para el botón de tabla */
+.btnTabla {
+    background-color: #008CBA; /* Color de fondo azul */
+    color: white; /* Color de texto */
+    padding: 10px 20px; /* Ajustar el padding */
+    text-align: center; /* Alinear el texto al centro */
+    text-decoration: none; /* Sin subrayado */
+    display: inline-block; /* Mostrar como bloque */
+    font-size: 16px; /* Ajustar el tamaño de la fuente */
+    margin: 4px 2px; /* Ajustar el margen */
+    cursor: pointer; /* Cambiar el cursor al pasar el mouse */
+    border-radius: 8px; /* Ajustar el radio de borde */
+}
+
+.btnTabla svg{
+    width: 60px; /* Ajustar el ancho del icono */
+    height: 60px; /* Ajustar el alto del icono */
+}

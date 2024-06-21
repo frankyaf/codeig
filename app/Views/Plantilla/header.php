@@ -7,7 +7,7 @@
 
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css" />
 
-    <link href="https://cdn.datatables.net/v/bs5/dt-2.0.8/b-3.0.2/b-html5-3.0.2/datatables.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/v/bs5/dt-2.0.8/b-3.0.2/datatables.min.css" rel="stylesheet">
  
 
 
@@ -21,13 +21,18 @@
     <script>
       tinymce.init({
         selector: '#descripcion_e',
-        toolbar: [
-            { name: 'history', items: [ 'undo', 'redo' ] },
-            { name: 'styles', items: [ 'styles' ] },
-            { name: 'formatting', items: [ 'bold', 'italic' ] },
-            { name: 'alignment', items: [ 'alignleft', 'aligncenter', 'alignright', 'alignjustify' ] },
-            { name: 'indentation', items: [ 'outdent', 'indent' ] }
-        ]
+        toolbar: 'undo redo | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat',
+        menubar: false, // Deshabilita el menú completo
+        plugins: 'lists', // Solo incluye el plugin de listas, puedes agregar más si es necesario
+        branding: false // Quita la marca TinyMCE del editor
+      });
+
+      tinymce.init({
+        selector: '#descripcion',
+        toolbar: 'undo redo | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat',
+        menubar: false, // Deshabilita el menú completo
+        plugins: 'lists', // Solo incluye el plugin de listas, puedes agregar más si es necesario
+        branding: false // Quita la marca TinyMCE del editor
       });
     </script>
 

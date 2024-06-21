@@ -8,8 +8,14 @@
     
         <div class="row ">
             <div class="dflex justify-content-md-end">
-                <button type="button" class="btn btn-success " id="btnNuevoArticulo">Nuevo Articulo</button>
-                <button onclick="irPagina()" type="button" class="btn btn-outline-success">Pantalla Principal</button>
+                <button type="button" class="btn btn-success " id="btnNuevoArticulo">
+                        Nuevo
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                    <path fill-rule="evenodd" d="M12 3.75a.75.75 0 0 1 .75.75v6.75h6.75a.75.75 0 0 1 0 1.5h-6.75v6.75a.75.75 0 0 1-1.5 0v-6.75H4.5a.75.75 0 0 1 0-1.5h6.75V4.5a.75.75 0 0 1 .75-.75Z" clip-rule="evenodd" />
+                    </svg>
+                       Articulo  
+                </button>
+                
             </div>    
         </div>
 
@@ -34,6 +40,23 @@
                         </tbody>
                                
                 </table>
+                <div class="row">
+                    <div class="dflex justify-content-md-end">
+                    <div class="fixed-bottom">
+                    <button onclick="irPagina()" type="button" class="btnInicio">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                    <path d="M11.47 3.841a.75.75 0 0 1 1.06 0l8.69 8.69a.75.75 0 1 0 1.06-1.061l-8.689-8.69a2.25 2.25 0 0 0-3.182 0l-8.69 8.69a.75.75 0 1 0 1.061 1.06l8.69-8.689Z" />
+                    <path d="m12 5.432 8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 0 1-.75-.75v-4.5a.75.75 0 0 0-.75-.75h-3a.75.75 0 0 0-.75.75V21a.75.75 0 0 1-.75.75H5.625a1.875 1.875 0 0 1-1.875-1.875v-6.198a2.29 2.29 0 0 0 .091-.086L12 5.432Z" />
+                    </svg>
+                    <span>
+                        Inicio
+                    </span>
+                    </button>
+                    </div>
+                    </div>
+
+                    
+                </div>
     </div>
 
     <div class="container ">
@@ -47,7 +70,7 @@
                 </div>
                 <div class="modal-body">
                     <form id="formArticulo">    
-                        <div class="modal-body">
+                    <div class="modal-body">
                             <div class="form-group">
                             <label for="titulo" class="col-form-label">Titulo:</label>
                             <input type="text" class="form-control" id="titulo">
@@ -59,35 +82,30 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="sintesis" class="col-form-label">Sintesis:</label>
-                                <div class="form-floating">
-                                <textarea class="form-control" placeholder="Leave a comment here" id="sintesis" style="height: 100px"></textarea>
-                                </div>
+                            <label for="area" class="col-form-label">Area:</label>
+                            <input type="text" class="form-control" id="area">
                             </div>
-                            
-                            <div class="row">
-                                <div class="col">
-                                    <div class="form-group ">
-                                    <label for="keywords" class="col-form-label">Edad Minima:</label>
-                                    <input type="number" class="form-control" id="min_age">
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-group ">
-                                    <label for="keywords" class="col-form-label">Edad Maxima:</label>
-                                    <input type="number" class="form-control" id="max_age">
-                                    </div>
-                                </div>
+
+                            <div class="form-group">
+                            <label for="tipo" class="col-form-label">Tipo:</label>
+                            <input type="text" class="form-control" id="tipo">
                             </div>
                             
                             <div class="form-group">
-                            <label for="titulo" class="col-form-label">Nombre Portada:</label>
+                            <label for="nombre_portada" class="col-form-label">Nombre Portada:</label>
                             <input type="text" class="form-control" id="nombre_portada">
                             </div>
 
                             <div class="form-group">
-                            <label for="titulo" class="col-form-label">Nombre Previa:</label>
+                            <label for="nombre_previa" class="col-form-label">Nombre Previa:</label>
                             <input type="text" class="form-control" id="nombre_previa">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="descripcion" class="col-form-label">Descripción:</label>
+                                <div class="form-floating">
+                                <textarea class="form-control" placeholder="Leave a comment here" name="descripcion_e" id="descripcion" style="height: 100px"></textarea>
+                                </div>
                             </div>
                             
                             <div class="form-group">
@@ -306,47 +324,34 @@
         $("#formArticulo").submit(function(e){
             e.preventDefault();    
             titulo = $.trim($("#titulo").val());
-            sintesis = $.trim($("#sintesis").val());
             keywords = $.trim($("#keywords").val());
-            min_age = $.trim($("#min_age").val());
-            max_age = $.trim($("#max_age").val());
+            area = $.trim($("#area").val());
+            tipo = $.trim($("#tipo").val());
             nombre_portada = $.trim($("#nombre_portada").val());
             nombre_previa = $.trim($("#nombre_previa").val());
+            descripcion = tinymce.get('descripcion').getContent();
             fecha =$.trim($("#fecha").val());
-
+            
             console.log(fecha);
             $.ajax({
                 url: "http://localhost/codeig4/public/Contenidos/nuevoContenido",
                 type: "POST",
                 contentType: "application/json",
                 data: JSON.stringify({
-                    titulo: titulo,
-                    sintesis: sintesis,
+                    title: titulo,
                     keywords: keywords,
-                    min_age: min_age,
-                    max_age: max_age,
-                    nombre_portada: nombre_portada,
-                    nombre_previa: nombre_previa,
-                    fecha: fecha,
+                    area: area,
+                    type: tipo,
+                    img_p: nombre_portada,
+                    thumbnail: nombre_previa,
+                    description: descripcion,
+                    date: fecha,
                     id: id,
                     opcion: opcion
                 }),
-                //{titulo:titulo,sintesis:sintesis,keywords:keywords,min_age:min_age,max_age:max_age,nombre_portada:nombre_portada,nombre_previa:nombre_previa,fecha:fecha, id:id, opcion:opcion},
                 success: function(data){  
-                    console.log(data);
-                    alert(data.id);
-                    id = data[0].id;            
-                    titulo = data[0].titulo;
-                    sintesis = data[0].sintesis;
-                    keywords = data[0].keywords;
-                    min_age = data[0].min_age;
-                    max_age = data[0].max_age;
-                    nombre_portada = data[0].nombre_portada;
-                    nombre_previa = data[0].nombre_previa;
-                    fecha = data[0].fecha;
-                    
-                    if(opcion == 1){tableArticulos.row.add([id,titulo,sintesis,keywords,min_age,max_age,nombre_portada,nombre_previa,fecha]).draw();}
-                    else{tableArticulos.row(fila).data([id,titulo,sintesis,keywords,min_age,max_age,nombre_portada,nombre_previa,fecha]).draw();}            
+                    //Insertar en el datatable la nueva fila
+                    tableRI.ajax.reload();           
                 }     
             });
 
@@ -385,9 +390,8 @@
                     opcion: opcion
                 }),
                 success: function(data){  
-                    console.log(data);
-                    alert(data[0].id);
-                               
+                    //Insertar en el datatable la nueva fila
+                    tableRI.ajax.reload();
                 }     
             });
 
